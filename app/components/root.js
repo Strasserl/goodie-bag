@@ -9,8 +9,12 @@ const Root = () => {
       <div>
         <nav>
           Goodie Bag
-          <Link to="/">Home</Link>
-          <Link to="/candies">Candies</Link>
+          <Link to="/" className="navElement">
+            Home
+          </Link>
+          <Link to="/candies" className="navElement">
+            Candies
+          </Link>
         </nav>
         <main>
           <h1>Welcome to the Goodie Bag!</h1>
