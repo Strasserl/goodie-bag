@@ -5,12 +5,16 @@ const Candy = db.define('candy', {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
-    notEmpty: true,
+    validate: {
+      notEmpty: true,
+    },
   },
   description: {
     type: Sequelize.TEXT,
     allowNull: false,
-    notEmpty: true,
+    validate: {
+      notEmpty: true,
+    },
   },
   quantity: {
     type: Sequelize.INTEGER,

@@ -1,8 +1,6 @@
 'use strict';
 
 const router = require('express').Router();
-const Candy = require('../db/models/Candy');
-
 // Your routes go here!
 // NOTE: Any routes that you put here are ALREADY mounted on `/api`
 // You can put all routes in this file HOWEVER,
@@ -20,14 +18,8 @@ const Candy = require('../db/models/Candy');
 // middleware will generate a 404, and send it to your
 // error-handling endware!
 
-router.get('/candies', async (req, res, next) => {
-  try {
-    const candies = await Candy.findAll();
-    res.send(candies);
-  } catch (error) {
-    next(error);
-  }
-});
+router.use('/candies', require('../api/candies'));
+
 router.use((req, res, next) => {
   const err = new Error('API route not found!');
   err.status = 404;
